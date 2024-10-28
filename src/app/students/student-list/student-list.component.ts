@@ -19,9 +19,13 @@ export class StudentListComponent implements OnInit {
   }
 
   loadStudents(): void {
-    this.studentService.getAllStudents().subscribe(data => {
-      this.students = data;
-    });
+    // this.studentService.getAllStudents().subscribe(data => {
+    //   this.students = data;
+    // });
+    this.students = [
+      { id: 1, firstName: 'John', lastName: 'Doe', enrollmentDate: new Date(), departmentId:6 },
+      { id: 2, firstName: 'Jane Smith', lastName: 'Smith', enrollmentDate: new Date(), departmentId:7 }
+    ];
   }
 
   deleteStudent(id: number): void {

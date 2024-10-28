@@ -11,7 +11,8 @@ import { Student } from '../../models/student.model';
   styleUrl: './student-detail.component.scss'
 })
 export class StudentDetailComponent implements OnInit {
-  student!: Student;
+  // student!: Student;
+  studentId!: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,9 +20,10 @@ export class StudentDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.studentService.getStudent(id).subscribe(data => {
-      this.student = data;
-    });
+    // const id = +this.route.snapshot.paramMap.get('id');
+    // this.studentService.getStudent(id).subscribe(data => {
+    //   this.student = data;
+    // });
+    this.studentId = Number(this.route.snapshot.paramMap.get('id'));
   }
 }
